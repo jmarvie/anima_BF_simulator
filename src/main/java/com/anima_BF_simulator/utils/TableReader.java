@@ -1,14 +1,15 @@
 package com.anima_BF_simulator.utils;
 
+import org.springframework.stereotype.Component;
+
 import java.io.File;
 import java.util.Objects;
 
+@Component
 public class TableReader {
 
-    private String readResultsTable (){
+    public File readResultsTable (){
         ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(Objects.requireNonNull(classLoader.getResource("fileTest.txt")).getFile());
-
-        return "";
+        return new File(Objects.requireNonNull(classLoader.getResource("tableResults.json")).getFile());
     }
 }

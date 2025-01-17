@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
-public class TableReaderTest {
+public class TableReaderTests {
 
 @Autowired
 public TableReader reader;
@@ -18,6 +18,7 @@ void resultsFileExists(){
     assertTrue(reader.readResultsTable().exists());
 }
 
+@Test
 void resultsFileReadable(){
     assertTrue(reader.readResultsTable().canRead());
 }

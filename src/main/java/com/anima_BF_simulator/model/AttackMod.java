@@ -19,12 +19,15 @@ public class AttackMod implements Serializable {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id_mod;
 
+    @Column(nullable=false, unique=true)
     private String name;
 
     private String description;
 
+    @Column(nullable=false)
     private int attack_score;
 
+    @Column(nullable=false)
     private int dmg_score;
 
     @ManyToOne

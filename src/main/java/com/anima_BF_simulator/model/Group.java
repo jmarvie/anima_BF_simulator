@@ -21,6 +21,7 @@ public class Group implements Serializable {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id_group;
 
+    @Column(nullable=false, unique=true)
     private String name;
 
     private String description;

@@ -19,22 +19,30 @@ public class IpScore implements Serializable {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id_score;
 
+    @Column(nullable=false, unique=true)
     private String name;
 
     private String description;
 
+    @Column(nullable=false)
     private int tr;
 
+    @Column(nullable=false)
     private int con;
 
+    @Column(nullable=false)
     private int per;
 
+    @Column(nullable=false)
     private int cha;
 
+    @Column(nullable=false)
     private int ele;
 
+    @Column(nullable=false)
     private int fr;
 
+    @Column(nullable=false)
     private int ene;
 
     @ManyToOne

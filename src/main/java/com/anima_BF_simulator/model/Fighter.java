@@ -6,28 +6,47 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @EqualsAndHashCode
 @Entity
-public class Fighter {
+public class Fighter implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private int id;
+    private int id_fighter;
 
     private String name;
 
     private String description;
 
-    private int hpTotal;
+    private int hp_total;
 
-    private boolean isAPlayer;
+    private boolean is_player;
 
-    private boolean isAlive;
+    private boolean is_alive;
 
-    @Transient
-    private int initScore;
+    private int init_score;
+
+    @ManyToOne
+    @JoinColumn(name="id_user", nullable=false)
+    private User user;
+
+    @OneToMany(mappedBy = "fighter")
+    private List<AttackMod> mods;
+
+    @OneToMany(mappedBy = "fighter")
+    private List<IpScore> ip_scores;
+
+    @ManyToMany
+    @JoinTable(
+            name = "fighter_groups",
+            joinColumns = @JoinColumn(name = "id_fighter"),
+            inverseJoinColumns = @JoinColumn(name = "id_group"))
+    private List<Group> groups;
 
 }

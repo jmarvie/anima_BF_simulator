@@ -20,14 +20,14 @@ public class Fighter implements Serializable {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id_fighter;
 
-    @Column(nullable=false, unique=true)
+    @Column(nullable=false)
     private String name;
 
     private String description;
 
     private int hp_total;
 
-    @Column(nullable=false, unique=true)
+    @Column(nullable=false)
     private boolean is_player;
 
     private boolean is_alive;

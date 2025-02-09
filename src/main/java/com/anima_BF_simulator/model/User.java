@@ -21,7 +21,7 @@ public class User implements Serializable {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id_user;
 
-    @Column(unique = true)
+    @Column(nullable = false, unique = true)
     private String login;
 
     @Column(nullable=false, unique=true)

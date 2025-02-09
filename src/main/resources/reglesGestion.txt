@@ -1,0 +1,32 @@
+1. User ( Utilisateur )
+
+- Un utilisateur possède forcément un login, un email et un mot de passe.
+- Le login et l'email sont des propriétés uniques.
+- Un utilisateur peut créer et stocker de 0 à une infinité de combattants.
+- Un utilisateur peut créer et stocker de 0 à une infinité de groupes de combattants
+
+
+2. Fighter ( Combattant )
+
+- Un combattant doit avoir un nom
+- Un combattant est crée par un utilisateur
+- Un combattant peut avoir 0 ou une infinité de modes d'attaque
+- Un combattant peut avoir 0 ou une infinité de scores d'IP
+
+
+3. Group ( Groupe )
+
+- Un groupe est crée par un utilisateur
+- Un groupe peut comprendre de 0 à une infinité de combattants
+
+
+4. AttackMod ( Mode d'attaque )
+
+- Un mode d'attaque doit comporter un nom, un score d'attaque et un score de dégâts
+- Un mode d'attaque est unique pour un combattant donné
+
+
+5. IpScore ( Score d'IP )
+
+- Un score d'IP doit comporter les sept valeurs pour chque type de dégâts
+- Un score d'IP est unique pour chaque combattant

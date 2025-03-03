@@ -1,23 +1,22 @@
 package com.anima_BF_simulator.model;
 
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serializable;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @EqualsAndHashCode
 @Entity
 public class AttackMod implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private int id_mod;
+    private long id_mod;
 
     @Column(nullable=false, unique=true)
     private String name;

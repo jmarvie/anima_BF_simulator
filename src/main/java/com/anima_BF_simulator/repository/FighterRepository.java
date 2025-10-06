@@ -13,6 +13,4 @@ public interface FighterRepository extends JpaRepository<Fighter, Long> {
 
     List<Fighter> findAllByUser(User user);
 
-    List<Fighter> findAllByGroup(Group group);
-
 }
